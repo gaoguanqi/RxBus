@@ -36,13 +36,6 @@ dependencies {
     compile 'io.reactivex:rxjava:+'
     compile 'io.reactivex:rxandroid:+'
     // RxLifecycle管理Rx的生命周期
-    //compile 'com.trello:rxlifecycle:+'
-    //compile 'com.trello:rxlifecycle-components:+'
-    //    compile 'com.trello:rxlifecycle:0.4.0'
-    //    compile 'com.trello:rxlifecycle-components:0.4.0'
-    //
-    //    compile 'com.trello:rxlifecycle:1.0'
-    // RxLifecycle管理Rx的生命周期
     compile 'com.trello:rxlifecycle:0.4.0'
     compile 'com.trello:rxlifecycle-components:0.4.0'
     //需要RxSharedPreferences库支持:https://github.com/f2prateek/rx-preferences
