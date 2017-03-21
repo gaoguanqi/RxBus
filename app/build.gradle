@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.virgo.rxbus"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    //compile 'com.android.support:appcompat-v7:25.2.0'
+    //compile 'com.android.support:recyclerview-v7:25.2.0'
+
+    compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    compile "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
+
+    //glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+
+    ///** rxjava **/
+    compile 'io.reactivex:rxjava:+'
+    compile 'io.reactivex:rxandroid:+'
+    // RxLifecycle管理Rx的生命周期
+    //compile 'com.trello:rxlifecycle:+'
+    //compile 'com.trello:rxlifecycle-components:+'
+    //    compile 'com.trello:rxlifecycle:0.4.0'
+    //    compile 'com.trello:rxlifecycle-components:0.4.0'
+    //
+    //    compile 'com.trello:rxlifecycle:1.0'
+    // RxLifecycle管理Rx的生命周期
+    compile 'com.trello:rxlifecycle:0.4.0'
+    compile 'com.trello:rxlifecycle-components:0.4.0'
+    //需要RxSharedPreferences库支持:https://github.com/f2prateek/rx-preferences
+    // compile 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0-RC1'
+
+    //compile 'com.github.LuckSiege.PictureSelector:picture_library:v1.2.6'
+    //compile 'com.github.chrisbanes:PhotoView:2.0.0'
+    compile 'com.github.chrisbanes:PhotoView:1.2.6'
+}
