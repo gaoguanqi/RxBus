@@ -26,7 +26,7 @@
         <activity android:name=".test.EventSendActivity"/>
         <activity android:name=".test.LoginActivity"/>
         <activity android:name=".test.PhotoViewActivity"/>
-
+<activity android:name=".test.RecyclerViewActivity"/>
 
 
 

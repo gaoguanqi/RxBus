@@ -6,10 +6,13 @@ import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 
 import com.jakewharton.rxbinding.widget.RxCompoundButton;
+import com.jakewharton.rxbinding.widget.RxTextView;
 import com.virgo.rxbus.R;
 import com.virgo.rxbus.base.BaseActivity;
+import com.virgo.rxbus.utils.common.ToastUtils;
 
 import rx.functions.Action1;
 
@@ -52,5 +55,26 @@ public class LoginActivity extends BaseActivity{
                         }
                     }
                 }) ;
+
+
+
+        final EditText editAccount = (EditText)findViewById(R.id.editAccount);
+//        RxTextView.textChanges(editAccount)
+//                .subscribe(new Action1<String>() {
+//                    @Override
+//                    public void call(String value) {
+//                        // do some work with the updated text
+//                    }
+//                });
+
+
+        RxTextView.textChanges(editAccount)
+                .subscribe(new Action1<CharSequence>() {
+                    @Override
+                    public void call(CharSequence charSequence) {
+
+                        ToastUtils.showToast(LoginActivity.this,"EditText添加文本改变事件");
+                    }
+                });
     }
 }
